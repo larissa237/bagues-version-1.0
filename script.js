@@ -74,16 +74,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
     })
 
-    // let listemois = document.querySelector('.listemois')
-    // let openlistemois = document.querySelector('#contact .form form #datedenaissance #Mois #nom i')
-    // openlistemois.addEventListener('click',function(){
-    //     if(listemois.style.display == 'none'){
-    //         listemois.style.display="block"
-    //     }
-    //     else{
-    //         listemois.style.display ='none'
-    //     }   
-    // })
     })
     
 
