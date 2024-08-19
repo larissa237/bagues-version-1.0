@@ -3,27 +3,27 @@
     padding: 0;
 }
 body {
-    background-color: black; 
+    background-color: #c91111f3; 
 }
 
 a {
     text-decoration: none;
-    color: white;
 }
 
 /* Partie header */
 header {
-    background-color: #F8F8F8;
+    background-color: rgb(253, 255, 255); 
     height: auto;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* Augmente le z-index pour s'assurer qu'il est au-dessus des autres éléments */
+    z-index: 1000; 
     padding: 5px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour le header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    box-sizing: border-box;
 }
 
-header > p {
+header > p{
     padding: 0 30px;
     font-family: 'Great Vibes', cursive;
     font-size: 45px;
@@ -33,13 +33,12 @@ header > p {
 }
 
 .entete {
-    float: right;
     display: flex;
     flex-wrap: nowrap;
-    padding: 30px 30px;
+    padding: 0px 40px;
     position: relative;
-    background-color: white;
-    margin: 20px 50px;
+    justify-content: right;
+    margin: 15px 60px;
 }
 
 .entete p, .entete i {
@@ -50,8 +49,9 @@ header > p {
 }
 
 .entete p {
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Lobster', cursive;
 }
 
 .entete > p {
@@ -63,18 +63,21 @@ header > p {
     padding: 5px;
     box-sizing: border-box;
     top: 50%;
-    transform: translateY(-25%);
 }
 
-.search-container {
-    display: none;
+.entete p:hover, .entete i:hover {
+    color: #2c3e5079;
 }
+
+.entete i:hover{
+    border: 1px solid #2c3e5079;
+}
+
 
 .navigation {
     width: 100%;
     display: inline-block;
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
+    border-top: 3px solid black;
     margin: 0;
 }
 
@@ -85,35 +88,40 @@ header > p {
     flex-wrap: nowrap;
     list-style: none;
 }
-
-.navigation nav ul li {
-    /* text-decoration: none; */
+.navigation nav ul li{
     margin: 10px 0;
     display: inline-block;
-    border: 2px solid white;
-    border-radius: 10%;
     width: 100px;
-    height: 40px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2c3e5079;
-    color: #F2F2F2;
-    text-align: center;
+
 }
+
 .navigation nav ul li:first-child {
-    background-color: #2C3E50;
-    margin-left: 30px;
+    background-color: #2c3e5079;
+    margin-left: 4%;
+    color: black;
+    border-radius: 50%;
 }
 
 .navigation nav ul li:last-child {
-    margin-right: 3.8%;
+    margin-right: 4%;
 }
 
-.entete p:hover, .entete i:hover {
-    color: #2c3e5079;
+.navigation nav ul li a {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: black;
+    font-size: 20px;
 }
 
+.navigation nav ul li:hover{
+    background-color: #2c3e5079;
+    border-radius: 50%;
+
+}
 /* Section accueil */
 #Acceuil {
     background-image: url('main/main1.png'),url('main/main2.png');
@@ -122,51 +130,122 @@ header > p {
     z-index: 1;
     height: 68vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 200px;
-    background-color: black;
+    padding-top: 42vh;
 }
 
 #Acceuil p {
     font-family: 'Great Vibes', cursive;
     color: white;
-    font-size: 4.5em;
+    font-size: 4em;
+}
+#Acceuil button{
+    height: 10%;
+    width: 15%;
+    margin-top: 5%;
+    background-color: #2c3e5079;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px white;
+    font-size: 1.3rem;
+    color: white;
 }
 
 /* section article */
 
 /* partie 1 */
-#diamant, #or, #autres{
-    background-color: white;
-}
-
-#partie1 p {
+#partie1 .pEntete {
     padding: 10px 0px 10px 0px;
     margin-top: 30px;
     border: 1px solid #2C3E50;
-    color:#2C3E50;
+    color:black;
     text-align: center;
     font-size: 260%;
+    background-color: white;
 }
-#partie1 .images {
+
+
+#partie1 .glide  .glide__slides {
     margin-top: 20px;
     padding-bottom: 20px;
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-}
-#partie1 img {
-    width: 19%;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+} 
+
+#partie1 .glide  .glide__slides .glide__slide .image{
+    display: flex;
+    flex-direction: column;
+    width: 97.5%;
     border: 3px double #2C3E50;
+    border-radius: 15px;
+    background-color: white;
 }
-#partie1 img:first-child {
-    margin-left: 50px;
+#partie1 .glide  .glide__slides .glide__slide .image img{
+    background-color: #F8F8F8;
+    margin: 20px;
+    box-sizing: border-box;
+    z-index: 1;
 }
-#partie1 img:last-child {
-    margin-right: 50px;
+
+#partie1 .glide  .glide__slides .glide__slide .image >p{
+    margin-top: 10px;
+    padding: 4% 0%;
+    background-color: #2c3e5079;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
 }
+
+
+#partie1 .glide  .glide__slides .glide__slide .image .icone{
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+} 
+
+
+#partie1 .glide  .glide__slides .glide__slide .image .icone p{
+    background-color: #2C3E50;
+    color: white;
+    cursor: pointer;
+    margin-top: -10px;
+    padding: 7px;
+    display: inline;
+    width: 50%;
+    text-align: center;
+}
+
+#partie1 .glide  .glide__slides .glide__slide .image  .icone :first-child{
+    color: #DAA520;
+    margin-left: 7px;
+} 
+
+#partie1 .glide  .glide__slides .glide__slide .image  .icone{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+#partie1 .glide  .glide__slides .glide__slide .image .icone :last-child{
+    /* display: inline-block; */
+    margin-right: 15px;
+} 
+
+.glide__arrows button{
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    z-index: 100;
+}
+
 
 /* partie2 */
 #partie2 {
@@ -182,9 +261,21 @@ header > p {
     justify-content: center;
     padding-bottom: 5%;
 }
-
-#partie2 #titre h1 {
-   font-size: 2.5em;
+#partie2 #titre .search-container input{
+    border: none;
+    width: 23vw;
+    height: 8vh;
+    margin: 2% 0%;
+    font-size: 15px;
+}
+#partie2 #titre .search-container{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+#partie2 #titre .search-container input:focus{
+    outline: none;
+    border: none;
 }
 
 #partie2 #categories{
@@ -217,7 +308,167 @@ header > p {
 
 }
 
-/* A propos de nous */
-#A-propos-de-nous p{
-    background-image: url('vitrine.jpg')no-repeat;
+/* A propos */
+#A-propos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    height: auto;
 }
+#A-propos #images{
+    width: 50%;
+    max-height: 100%;
+    background-image: url('vitrine.jpg');
+    background-repeat: no-repeat; 
+    background-position: bottom left ; 
+    height: 70vh;
+    border: 2px solid #F2F2F2;
+    box-shadow: 10px 10px 10px white;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+#A-propos #images p{
+    text-align: center;
+    padding: 10% ;
+    font-size: 2.8em;
+    font-weight: 500;
+    color: whitesmoke;
+    font-family: 'Athiti','sans serif';
+}
+
+#A-propos #description{
+    width: 50%;
+}
+#A-propos #description h1{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 2.8em;
+    color: black;
+}
+#A-propos #description p{
+    margin: 5%;
+    font-size: 2em;
+    text-indent: 50px;
+    color: black;
+}
+
+/*section contact-nous*/
+#contact{
+    background-color: white;
+    margin: 6% 370px;
+    height: auto;
+    padding: 3% 0%;
+}
+#contact h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+#contact .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10% 10%;
+}
+#contact .form form input[type="text"],input[type="email"],input[type="password"]{
+    border-radius: 10px;
+    width: 23vw;
+    height: 10vh;
+    margin-bottom: 5%;
+    border: 1px solid black;
+}
+#contact .form button{
+    margin-top: 10%;
+    width: 20vw;
+    height: 10vh;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #DAA520;
+    color: #F8F8F8;
+}
+#contact .form form .container{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 10vh;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 5px;
+}
+#contact .form form .container input{
+    width: 19vw;
+    border: none;
+}
+#contact .form form .container input:focus{
+    border: none;
+    outline: none;
+}
+
+#contact .form form .container .fa-eye{
+    display: none;
+    position: relative;
+    top:50%;
+    transform: translateY(-10%);
+}
+#contact .form form .container .fa-eye-slash{
+    display: inline-block;
+    position: relative;
+    top:50%;
+    transform: translateY(-10%);
+}
+#contact .form form #datedenaissance {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+#contact .form form #datedenaissance input[type="text"]{
+    width: 7.6vw;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+#contact .form form #datedenaissance #Mois .listemois select{
+    width: 7.6vw;
+    border-radius: 0px;
+    height: 10vh;
+    margin-bottom: 5%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: white;
+} 
+#contact .form form #datedenaissance #Mois .listemois select option :first-child{
+    color: rgba(241, 14, 14, 0.623);
+}
+
+/*footer*/
+footer{
+    background-color: rgb(253, 255, 255);
+    padding-bottom: 2%;
+}
+footer #dernierepartie{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+footer #dernierepartie div{
+    margin: 3% 5% 3% 5%;
+}
+footer #dernierepartie div p,h3{
+    margin-bottom: 4%;
+}
+footer #dernierepartie div:first-child{
+    font-family: 'Great Vibes', cursive;
+    font-size: 2em;
+    margin: 5% 0% 5% 5%;
+}
+footer #dernierepartie div:last-child{
+    margin-right: 5%;
+}
+footer > p{
+    text-align: center;
+}
+
